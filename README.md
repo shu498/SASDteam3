@@ -6,4 +6,4 @@ Team No.3 System Analysis and Design project
 | 蘇子皓|C112118234| 組長 |Unknown|
 | 林東毅|C112118226| 組員 |Unknown|
 | 張恩豪|C112118227| 組員 |Unknown|
-| 舒宣凱|C112118231| 組員 |Unknown|
+| 舒宣凱|C112118231| 組員 |機器視覺模組|
