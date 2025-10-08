@@ -52,8 +52,8 @@ gantt
     編寫演算法             :c1, after dev, 15d
     偵測成果檢查           :c2, after c1, 5d
     優化與調整             :c3, after c2, 7d
-    模組封裝 偵測          :c4, after c3, 3d
-    標籤偵測模組 測試      :c5, after c4, 5d
+    標籤偵測模組 測試          :c4, after c3, 3d
+    模組封裝 標籤偵測      :c5, after c4, 5d
 
     section 前端
     設計 UI                :d1, after dev, 7d
