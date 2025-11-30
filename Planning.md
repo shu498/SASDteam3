@@ -1,103 +1,99 @@
-## 專題任務規劃
-| 任務類別 | 任務編號 | 任務名稱 | 前置任務 | 需時（工作天） |
-|---|---:|---|---|---:|
-| 初步規劃 | 1.1 | 制定計畫 | 無 | 3 |
-| 初步規劃 | 1.2 | 訂定框架 | 1.1 | 4 |
-| 初步規劃 | 1.3 | API 規劃 | 1.2 | 5 |
-| 初步規劃 | 1.4 | 制定、分配任務 | 1.3 | 2 |
-| 初步規劃 | DEV | 建立開發環境 | 1.4 | 2 |
-| 圖片處理模組 | 2.1 | 建立標準化流程 | DEV | 7 |
-| 圖片處理模組 | 2.2 | 開發預處理程式 | 2.1 | 10 |
-| 圖片處理模組 | 2.3 | 圖片處理模組 測試 | 2.2 | 5 |
-| 圖片處理模組 | 2.4 | 模組封裝 圖片處理 | 2.3 | 3 |
-| 標籤偵測模組 | 3.1 | 編寫演算法 | DEV | 15 |
-| 標籤偵測模組 | 3.2 | 偵測成果檢查 | 3.1 | 5 |
-| 標籤偵測模組 | 3.3 | 優化與調整 | 3.2 | 7 |
-| 標籤偵測模組 | 3.4 | 標籤偵測模組 測試 | 3.3 | 3 |
-| 標籤偵測模組 | 3.5 | 模組封裝 標籤偵測 | 3.4 | 5 |
-| 前端 | 4.1 | 設計 UI | DEV | 7 |
-| 前端 | 4.2 | 前端框架建置 | 4.1 | 12 |
-| 前端 | 4.3 | 前端測試 | 4.2 | 5 |
-| 測試與整合 | 5.1 | 串接 | 2.3, 2.4, 3.4, 3.5, 4.3 | 5 |
-| 測試與整合 | 5.2 | 系統整合測試 | 5.1 | 7 |
-| 測試與整合 | 5.3 | 成功率檢驗 | 5.2 | 3 |
-## 任務項目分工
-| 成員 | 負責任務（項目） |
-|---|---|
-|蘇子皓| 會議主導、API 規劃、制定分配任務、建立開發環境、串接、系統整合測試、成功率檢驗|
-|舒宣凱| 建立標準化流程、開發預處理程式、圖片處理模組測試、模組封裝、（協助）標籤偵測模組串接 | 
-|林東毅| 編寫演算法、偵測成果檢查、優化與調整、模組封裝、標籤偵測模組 測試 |
-|張恩豪|  設計 UI、前端框架建置、前端測試、（協助）串接支援/API 整合| 
-## 專題甘特圖
+## 📅 專案時程與任務分配 (Project Schedule & Tasks)
+
+### 1. 👥 團隊成員任務分配 (Team Roles)
+
+| 成員 | 角色 (Role) | 負責內容 (Responsibilities) |
+| :--- | :--- | :--- |
+| **林東毅** | **AI & Backend Core** | • WhisperX 模型整合與優化<br>• Transformer 摘要與翻譯實作<br>• 撰寫 AI 處理邏輯 (Service Layer) |
+| **張恩豪** | **Frontend (React)** | • React 專案架構與 UI 切版<br>• 開發錄音、檔案上傳與結果顯示介面<br>• RWD 行動端適配與互動優化 |
+| **蘇子皓** | **DevOps & Integration** | • Django 環境建置與 DRF API 接口開發<br>• FFmpeg 音訊預處理串接<br>• 系統整合、除錯與最終部署 |
+
+---
+
+### 2. 📊 專案甘特圖 (Gantt Chart)
+
 ```mermaid
 gantt
+    title 語音轉文字專案開發時程 (10/01 - 12/21)
     dateFormat  YYYY-MM-DD
-    title 自動化標籤瑕疵偵測系統 甘特圖（2025-10-01 到 2025-12-21）
-    excludes    weekends
+    axisFormat  %m/%d
+    
+    section 初始階段
+    需求分析與規格確認        :done,    p1, 2024-10-01, 2024-10-07
+    環境建置 (Django/React)   :done,    p2, 2024-10-05, 2024-10-12
 
-    section 初步規劃
-    制定計畫               :a1, 2025-10-01, 3d
-    訂定框架               :a2, after a1, 4d
-    API 規劃               :a3, after a2, 5d
-    制定、分配任務         :a4, after a3, 2d
-    建立開發環境           :dev, after a4, 2d
+    section AI 與後端
+    WhisperX 模型整合         :active,  b1, 2024-10-13, 2024-10-27
+    FFmpeg 音訊處理模組       :         b2, 2024-10-20, 2024-11-03
+    Transformer 摘要翻譯      :         b3, 2024-10-28, 2024-11-10
+    API 接口開發              :         b4, 2024-11-01, 2024-11-15
 
-    section 圖片處理模組
-    建立標準化流程         :b1, after dev, 7d
-    開發預處理程式         :b2, after b1, 10d
-    圖片處理模組 測試      :b3, after b2, 5d
-    模組封裝 圖片處理      :b4, after b3, 3d
+    section 前端開發
+    UI/UX 設計與切版          :active,  f1, 2024-10-13, 2024-10-27
+    錄音與上傳功能實作        :         f2, 2024-10-28, 2024-11-10
+    結果展示介面優化          :         f3, 2024-11-05, 2024-11-18
 
-    section 標籤偵測模組
-    編寫演算法             :c1, after dev, 15d
-    偵測成果檢查           :c2, after c1, 5d
-    優化與調整             :c3, after c2, 7d
-    標籤偵測模組 測試          :c4, after c3, 3d
-    模組封裝 標籤偵測      :c5, after c4, 5d
-
-    section 前端
-    設計 UI                :d1, after dev, 7d
-    前端框架建置           :d2, after d1, 12d
-    前端測試               :d3, after d2, 5d
-
-    section 測試與整合
-    串接                   :e2, after c5, 5d
-    系統整合測試           :e3, after e2, 7d
-    成功率檢驗             :e4, after e3, 3d
+    section 整合與交付
+    前後端 API 串接           :         i1, 2024-11-15, 2024-11-30
+    系統測試與 Bug Fix        :         t1, 2024-12-01, 2024-12-15
+    文件撰寫與成果發表        :         t2, 2024-12-15, 2024-12-21
 ```
-## PERT/CRM圖
+### 3. 🕸️ 專案 PERT/CPM 網絡圖 (Critical Path)
+> 說明：**紅色框線**代表關鍵路徑 (Critical Path)，其餘為一般任務。
 ```mermaid
-flowchart TD
-    Start["開始"] --> A["制定計畫 3天"]
-    A --> B["訂定框架 4天"]
-    B --> C["API 規劃 5天"]
-    C --> D["制定、分配任務 2天"]
-    D --> DEV["建立開發環境 2天"]
+graph TD
+    
+    classDef critical fill:#fff,stroke:#d32f2f,stroke-width:3px,color:#d32f2f;
+    
+    %% 一般任務 (Normal): 藍框、白底、黑字
+    classDef normal fill:#fff,stroke:#1976d2,stroke-width:1px,color:#000;
+    
+    %% 起訖點: 灰色填充
+    classDef start_end fill:#eee,stroke:#333,stroke-width:1px,stroke-dasharray: 3 3,color:#000;
 
-    DEV --> IMG1["建立標準化流程 7天"]
-    IMG1 --> IMG2["開發預處理程式 10天"]
-    IMG2 --> IMG3["圖片處理模組 測試 5天"]
-    IMG3 --> IMG4["模組封裝 圖片處理 3天"]
+    %% --- 節點定義 (全中文版) ---
+    
+    Start((專案開始<br/>10/01)):::start_end
+    End((專案結束<br/>12/21)):::start_end
 
-    DEV --> DET1["編寫演算法 15天"]
-    DET1 --> DET2["偵測成果檢查 5天"]
-    DET2 --> DET3["優化與調整 7天"]
-    DET3 --> DET4["標籤偵測模組 測試 5天"]
-    DET4 --> DET5["模組封裝 標籤偵測 3天"]
+    %% 關鍵路徑節點
+    A["<b>A. 需求分析</b><br/>工期: 7天<br/>10/01 - 10/07"]:::critical
+    B["<b>B. 環境建置</b><br/>工期: 8天<br/>10/05 - 10/12"]:::critical
+    C["<b>C. WhisperX 整合</b><br/>工期: 15天<br/>10/13 - 10/27"]:::critical
+    E["<b>E. Transformer 翻譯</b><br/>工期: 14天<br/>10/28 - 11/10"]:::critical
+    F["<b>F. API 接口開發</b><br/>工期: 15天<br/>11/01 - 11/15"]:::critical
+    I["<b>I. 前後端串接</b><br/>工期: 16天<br/>11/15 - 11/30"]:::critical
+    J["<b>J. 系統測試</b><br/>工期: 15天<br/>12/01 - 12/15"]:::critical
+    K["<b>K. 文件與交付</b><br/>工期: 7天<br/>12/15 - 12/21"]:::critical
 
-    DEV --> FE1["設計 UI 7天"]
-    FE1 --> FE2["前端框架建置 12天"]
-    FE2 --> FE3["前端測試 5天"]
+    %% 一般路徑節點
+    D["<b>D. FFmpeg 處理</b><br/>工期: 15天<br/>10/20 - 11/03"]:::normal
+    G["<b>G. 前端 UI 設計</b><br/>工期: 15天<br/>10/13 - 10/27"]:::normal
+    H["<b>H. 前端功能實作</b><br/>工期: 14天<br/>10/28 - 11/10"]:::normal
 
-    IMG4 --> INT["串接 5天"]
-    IMG3 --> INT
-    DET4 --> INT
-    DET5 --> INT
-    FE3 --> INT
+    %% --- 連線定義 ---
+    %% 這裡的順序對應下方的 linkStyle，請勿隨意調換順序
+    
+    Start --> A
+    A --> B
+    
+    B --> C
+    B --> D
+    B --> G
+    
+    C --> E
+    D --> F
+    E --> F
+    
+    G --> H
+    H --> I
+    
+    F --> I
+    
+    I --> J
+    J --> K
+    K --> End
 
-    INT --> SYS["系統整合測試 7天"]
-    SYS --> OK["成功率檢驗 3天"]
-
-    classDef startGroup fill:#f8fafc,stroke:#cbd5e1;
-    class A,B,C,D,DEV startGroup;
-```
+    %% --- 樣式應用 (紅色箭頭表示關鍵路徑) ---
+    %% 對應上方連線的順序 (0, 1, 2, 5, 7, 10, 11, 12, 13)
+    linkStyle 0,1,2,5,7,10,11,12,13 stroke:#d32f2f,stroke-width:3px;
