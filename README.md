@@ -30,7 +30,7 @@ sequenceDiagram
     FE->>BE: POST /api/upload (音訊檔)
     activate BE
     BE->>BE: FFmpeg 格式轉換與預處理
-    BE->>AI: 發送音訊進行 STT (語音轉文字)
+    BE->>AI: 發送音訊進行 ASR任務 (語音轉文字)
     activate AI
     AI-->>BE: 返回原始文本 (Transcript)
     deactivate AI
